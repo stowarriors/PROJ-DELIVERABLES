@@ -14,7 +14,7 @@ def main():
     p.dataSet()
     p.dataLabel()
     p.plotParameters()
-    p.axisLabel
+    p.axisLabel('Date', 'Active Cases')
     p.plot('graph.pdf')
 
 if __name__ == "__main__":

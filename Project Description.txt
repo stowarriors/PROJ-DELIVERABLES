@@ -1,0 +1,13 @@
+To visualize the Covid-19 reports on the existing timeline, Google’s Big Query module is used for a python script to access Big Data on an open data bank platform. 
+The program will give the users the capability to choose which timeline they want to view the cases status report. Accessing the Big Query, it is parsed using Pandas 
+library, loaded to a data frame then saved as a csv file. It can be plotted directly but opting for the csv route allows us to save a local file for later use. 
+Then loading the csv file using pandas.read_csv, and then plotting it’s active cases and the date time to be displayed as a graph.
+
+To analyze the process, we start with the file that connects to the data bank. To access the database, we must first set up a project which connects to our google 
+cloud platform account, doing so helps us acquire the id for us to connect our python script to the google cloud project. The google cloud project is a gateway for 
+us to use google’s api where in this case, we’re using Google’s Big Query API. Since we’re accessing a database, we set the database command in selecting the appropriate 
+data in which we dictate as a string in self.Query, this string is an argument for the query() method of bigquery class. Which is then loaded on to pandas dataframe which 
+will be used to manipulate the acquired data further. This dataframe holds the acquired data in which is then saved to a csv file for the purpose of keeping a local save.
+On the plot file, the csv save is then loaded, the first thing to be done is to convert the data date and time string to a python recognizable format which will allow 
+us to do operations on, this operation mainly the sort_values which will sort the date. Next is defining labels in regards to its recognizable keys which will be the 
+country_date and case_active. Then naming the x and y axis labels and plotting the graph using matplotlib’s show() method
